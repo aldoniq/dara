@@ -70,7 +70,7 @@ const tiles = [
               </span>{' '}
             </>
           ))
-        }<span class="split-word text-orange"><span class="split-char" data-char>.</span></span>
+        }
       </h1>
 
       <p class="mt-7 max-w-lg text-lg font-medium text-violet" data-fade>{t.meaning}</p>
@@ -96,7 +96,7 @@ const tiles = [
           >
             <div>
               <p class:list={['font-black', i === 0 ? 'text-5xl sm:text-6xl' : 'text-3xl sm:text-4xl']}>
-                <span data-count={stat.n}>{stat.n}</span>{stat.suffix}
+                {stat.n}{stat.suffix}
               </p>
               <p class="mt-1.5 text-sm font-medium opacity-85">{stat.label}</p>
             </div>

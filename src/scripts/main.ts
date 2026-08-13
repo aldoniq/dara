@@ -16,22 +16,6 @@ if (burger && menu) {
   menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => toggle(false)));
 }
 
-/* ---------- Полоса прогресса страницы в шапке ---------- */
-
-const progress = document.querySelector<HTMLElement>('[data-progress]');
-if (progress) {
-  const update = () => {
-    const doc = document.documentElement;
-    const max = doc.scrollHeight - window.innerHeight;
-    progress.style.transform = `scaleX(${max > 0 ? window.scrollY / max : 0})`;
-  };
-  addEventListener('scroll', update, { passive: true });
-  addEventListener('resize', update, { passive: true });
-  update();
-}
-
-/* ---------- Форма заявки → /api/lead → Telegram ---------- */
-
 /* ---------- Умное поле контакта: маска телефона или @username ---------- */
 
 const contactInput = document.getElementById('lead-contact') as HTMLInputElement | null;
@@ -86,15 +70,6 @@ form?.addEventListener('submit', async (ev) => {
     form.dataset.state = 'success';
     localStorage.setItem(SENT_AT_KEY, String(Date.now()));
     form.reset();
-    if (!reduced) {
-      animate('[data-log-line]', {
-        opacity: [0, 1],
-        x: [-14, 0],
-        delay: stagger(350),
-        duration: 450,
-        ease: 'outCubic',
-      });
-    }
   } catch {
     form.dataset.state = 'error';
   }
@@ -128,25 +103,6 @@ if (!reduced) {
       ease: 'outBack',
     });
   }
-
-  // Счётчики статистики
-  utils.$('[data-count]').forEach((el) => {
-    const target = Number(el.dataset.count ?? '0');
-    const state = { v: 0 };
-    el.textContent = '0';
-    animate(state, {
-      v: target,
-      duration: 1500,
-      delay: 800,
-      ease: 'out(4)',
-      onUpdate: () => {
-        el.textContent = String(Math.round(state.v));
-      },
-      onComplete: () => {
-        el.textContent = String(target);
-      },
-    });
-  });
 
   // Мягкое появление блоков
   utils.$('[data-fade]').forEach((el) => {

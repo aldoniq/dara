@@ -9,34 +9,20 @@ interface Props {
 const { lang } = Astro.props;
 const t = dict[lang].services;
 
-const looks = [
-  { bg: 'bg-lilac', badge: 'bg-violet text-white' },
-  { bg: 'bg-peach', badge: 'bg-orange text-white' },
-  { bg: 'bg-sage', badge: 'bg-mint text-white' },
-  { bg: 'bg-rose', badge: 'bg-[#b03a2e] text-white' },
-];
+const looks = [{ bg: 'bg-lilac' }, { bg: 'bg-peach' }, { bg: 'bg-sage' }, { bg: 'bg-rose' }];
 ---
 
 <section id="services" class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
-  <SectionHead index="01" title={t.title} sub={t.sub} accent="violet" />
+  <SectionHead title={t.title} sub={t.sub} />
 
   <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
     {
       t.items.map((item, i) => (
         <article
           data-build
-          class:list={[
-            'flex flex-col rounded-[28px] p-7 transition-transform duration-200 hover:-translate-y-2 hover:-rotate-1',
-            looks[i].bg,
-          ]}
+          class:list={['flex flex-col rounded-[28px] p-7 transition-shadow duration-200 hover:shadow-soft', looks[i].bg]}
         >
-          <span
-            class:list={['flex h-10 w-10 items-center justify-center rounded-xl text-sm font-black', looks[i].badge]}
-            aria-hidden="true"
-          >
-            {i + 1}
-          </span>
-          <h3 class="mt-5 text-xl font-extrabold">{item.title}</h3>
+          <h3 class="text-xl font-extrabold">{item.title}</h3>
           <p class="mt-2.5 flex-1 text-[15px] leading-relaxed text-muted">{item.desc}</p>
           <div class="mt-5 flex flex-wrap gap-2">
             {item.tags.map((tag) => (

@@ -1,6 +1,5 @@
 ---
 import { dict, langs, langNames, langPath, type Lang } from '../i18n';
-import { splitWords } from '../lib/split';
 
 interface Props {
   lang: Lang;
@@ -9,36 +8,24 @@ interface Props {
 const { lang } = Astro.props;
 const t = dict[lang];
 
-const wordmark = splitWords('dara✿');
+const year = new Date().getFullYear();
 ---
 
 <footer class="bg-paper pb-10">
   <div class="mx-auto max-w-6xl px-4 sm:px-6">
-    <p
-      data-split-rise
-      class="pointer-events-none mt-10 text-center text-[19vw] leading-none font-black tracking-tight text-lilac select-none lg:text-[13rem]"
-      aria-hidden="true"
-    >
-      {
-        wordmark.map((word) => (
-          <span class="split-word">
-            {word.map((ch) => (
-              <span class:list={['split-char', ch === '✿' && 'text-rose']} data-char>
-                {ch}
-              </span>
-            ))}
-          </span>
-        ))
-      }
-    </p>
-
-    <div class="mt-8 flex flex-col items-center justify-between gap-6 border-t border-ink/10 pt-8 sm:flex-row">
+    <div class="mt-10 flex flex-col items-center justify-between gap-6 border-t border-ink/10 pt-8 sm:flex-row">
       <div class="text-center sm:text-left">
-        <p class="text-sm font-extrabold">{t.footer.tagline}</p>
-        <p class="mt-1.5 flex items-center justify-center gap-2 text-xs font-medium text-muted sm:justify-start">
-          <span class="h-2 w-2 rounded-full bg-mint" aria-hidden="true"></span>
-          {t.footer.status}
+        <p class="flex items-center justify-center gap-1.5 text-lg font-black text-violet sm:justify-start">
+          dara<svg width="12" height="12" viewBox="0 0 14 14" aria-hidden="true" class="mt-0.5">
+            <circle cx="7" cy="3" r="2.6" fill="var(--color-lemon)"></circle>
+            <circle cx="11" cy="7" r="2.6" fill="var(--color-lemon)"></circle>
+            <circle cx="7" cy="11" r="2.6" fill="var(--color-lemon)"></circle>
+            <circle cx="3" cy="7" r="2.6" fill="var(--color-lemon)"></circle>
+            <circle cx="7" cy="7" r="2" fill="var(--color-violet)"></circle>
+          </svg>
         </p>
+        <p class="mt-1 text-sm font-semibold">{t.footer.tagline}</p>
+        <p class="mt-1 text-xs font-medium text-muted">{t.footer.status}</p>
       </div>
 
       <nav class="flex items-center gap-2 text-xs font-bold" aria-label={t.footer.langLabel}>
@@ -58,7 +45,7 @@ const wordmark = splitWords('dara✿');
         }
       </nav>
 
-      <p class="text-xs font-medium text-muted">{t.footer.rights}</p>
+      <p class="text-xs font-medium text-muted">© {year} {t.footer.rights}</p>
     </div>
   </div>
 </footer>

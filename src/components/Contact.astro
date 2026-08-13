@@ -8,12 +8,8 @@ interface Props {
 const { lang } = Astro.props;
 const t = dict[lang].contact;
 
-// Плейсхолдеры — заменить на реальные контакты студии
-const contacts = [
-  { label: 'Telegram', value: '@dara_studio', href: 'https://t.me/dara_studio' },
-  { label: 'Email', value: 'hello@dara.studio', href: 'mailto:hello@dara.studio' },
-  { label: 'Телефон', value: '+7 700 000 00 00', href: 'tel:+77000000000' },
-];
+// Telegram настоящий (бот приёма заявок); телефон и почту добавить, когда появятся реальные
+const contacts = [{ label: 'Telegram', value: '@dara_studio_bot', href: 'https://t.me/dara_studio_bot' }];
 
 const inputClass =
   'w-full rounded-2xl bg-paper px-5 py-4 text-[15px] placeholder:text-muted/50 focus:outline-none focus:ring-2 focus:ring-violet';
@@ -84,17 +80,7 @@ const inputClass =
         <p class="form-note note-sending text-sm font-semibold text-muted" role="status">{t.form.sending}</p>
 
         <div class="form-note note-success rounded-2xl bg-sage p-5" role="status">
-          <p class="font-extrabold text-mint">{t.form.success}</p>
-          <ul class="mt-2 space-y-1.5">
-            {
-              t.form.log.map((line) => (
-                <li class="flex items-start gap-2 text-sm font-medium text-ink/70" data-log-line>
-                  <span class="mt-0.5 text-mint" aria-hidden="true">✓</span>
-                  {line}
-                </li>
-              ))
-            }
-          </ul>
+          <p class="font-bold text-mint">{t.form.success}</p>
         </div>
 
         <p class="form-note note-error rounded-2xl bg-rose p-5 text-sm font-bold text-[#b03a2e]" role="alert">

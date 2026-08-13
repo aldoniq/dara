@@ -9,35 +9,19 @@ interface Props {
 const { lang } = Astro.props;
 const t = dict[lang].testimonials;
 
-const avatars = ['bg-orange text-white', 'bg-violet text-white', 'bg-mint text-white'];
-const quotes = ['text-orange', 'text-violet', 'text-mint'];
 ---
 
 <section class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
-  <SectionHead index="05" title={t.title} accent="orange" />
+  <SectionHead title={t.title} />
 
   <div class="grid gap-6 md:grid-cols-3">
     {
-      t.items.map((item, i) => (
+      t.items.map((item) => (
         <figure data-build class="card-soft flex flex-col p-7">
-          <span class:list={['text-5xl leading-none font-black', quotes[i]]} aria-hidden="true">
-            “
-          </span>
-          <blockquote class="mt-2 flex-1 leading-relaxed text-ink/85">{item.text}</blockquote>
-          <figcaption class="mt-6 flex items-center gap-3">
-            <span
-              class:list={[
-                'flex h-11 w-11 items-center justify-center rounded-full text-sm font-black',
-                avatars[i],
-              ]}
-              aria-hidden="true"
-            >
-              {item.author.charAt(0)}
-            </span>
-            <span>
-              <span class="block text-sm font-bold">{item.author}</span>
-              <span class="block text-xs text-muted">{item.role}</span>
-            </span>
+          <blockquote class="flex-1 leading-relaxed text-ink/85">{item.text}</blockquote>
+          <figcaption class="mt-6 border-t border-ink/10 pt-4">
+            <span class="block text-sm font-bold">{item.author}</span>
+            <span class="block text-xs text-muted">{item.role}</span>
           </figcaption>
         </figure>
       ))

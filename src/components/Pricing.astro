@@ -12,7 +12,7 @@ const t = dict[lang].pricing;
 
 <section id="pricing" class="bg-card">
   <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
-    <SectionHead index="04" title={t.title} sub={t.sub} accent="rose" />
+    <SectionHead title={t.title} sub={t.sub} />
 
     <div class="grid gap-6 lg:grid-cols-3">
       {
@@ -22,41 +22,37 @@ const t = dict[lang].pricing;
             <article
               data-build
               class:list={[
-                'relative flex flex-col rounded-[28px] p-8',
-                featured ? 'bg-violet text-white shadow-lift lg:-translate-y-3' : 'bg-paper',
+                'flex flex-col rounded-[28px] p-8',
+                featured ? 'border-2 border-violet bg-paper' : 'bg-paper',
               ]}
             >
-              {featured && (
-                <span class="absolute -top-3.5 right-8 rounded-full bg-lemon px-4 py-1.5 text-xs font-extrabold text-ink">
-                  {t.popular}
-                </span>
-              )}
               <h3 class="text-xl font-extrabold">{item.name}</h3>
-              <p class:list={['mt-4 text-3xl font-black sm:text-4xl', !featured && 'text-violet']}>
-                {item.price}
-              </p>
-              <p class:list={['mt-1 text-sm font-medium', featured ? 'text-white/70' : 'text-muted']}>
-                {item.time}
+              <p class="mt-4 text-3xl font-black text-violet sm:text-4xl">{item.price}</p>
+              <p class="mt-1 text-sm font-medium text-muted">
+                {item.time}{featured && <span class="text-violet"> · {t.popular}</span>}
               </p>
               <ul class="mt-7 flex-1 space-y-3">
                 {item.features.map((feature) => (
                   <li class="flex items-start gap-3 text-[15px] leading-snug">
-                    <span
-                      class:list={[
-                        'mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[11px] font-black',
-                        featured ? 'bg-lemon text-ink' : 'bg-sage text-mint',
-                      ]}
+                    <svg
+                      class="mt-1 h-3.5 w-3.5 shrink-0 text-mint"
+                      viewBox="0 0 14 14"
+                      fill="none"
                       aria-hidden="true"
                     >
-                      ✓
-                    </span>
-                    <span class:list={featured ? 'text-white/90' : 'text-muted'}>{feature}</span>
+                      <path
+                        d="M2 7.5 L5.5 11 L12 3.5"
+                        stroke="currentColor"
+                        stroke-width="2.4"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <span class="text-muted">{feature}</span>
                   </li>
                 ))}
               </ul>
-              <a href="#contact" class:list={['mt-8', featured ? 'btn-lemon' : 'btn-violet']}>
-                {t.cta}
-              </a>
+              <a href="#contact" class="btn-violet mt-8">{t.cta}</a>
             </article>
           );
         })
