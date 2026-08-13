@@ -1,20 +1,21 @@
 @import 'tailwindcss';
 @import '@fontsource-variable/rubik';
 
+/* Палитра «ретро-печать»: вермильон + чернильный синий + горчица на тёплой бумаге */
 @theme {
-  --color-paper: #f7f4ef;
-  --color-card: #ffffff;
-  --color-ink: #1c1b33;
-  --color-muted: #5e5c78;
-  --color-violet: #5b46f6;
-  --color-grape: #4735d1;
-  --color-orange: #ff7a00;
-  --color-mint: #16c47f;
-  --color-lemon: #ffde33;
-  --color-lilac: #e6e1ff;
-  --color-peach: #ffe3c7;
-  --color-sage: #d3f5e7;
-  --color-rose: #ffd9ec;
+  --color-paper: #f5efdf;
+  --color-card: #fffcf0;
+  --color-ink: #22304d;
+  --color-muted: #525c6e;
+  --color-violet: #c43a1e;
+  --color-grape: #a02e16;
+  --color-orange: #2c4770;
+  --color-mint: #2f7355;
+  --color-lemon: #e6b422;
+  --color-lilac: #d9dfe8;
+  --color-peach: #f3ddb9;
+  --color-sage: #d8dcc0;
+  --color-rose: #edd0c6;
 
   --font-body: 'Rubik Variable', ui-sans-serif, system-ui, sans-serif;
   --font-display: 'Rubik Variable', ui-sans-serif, system-ui, sans-serif;
