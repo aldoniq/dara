@@ -1,0 +1,111 @@
+---
+import { dict, type Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = dict[lang].contact;
+
+// Плейсхолдеры — заменить на реальные контакты студии
+const contacts = [
+  { label: '@dara_studio', href: 'https://t.me/dara_studio', emoji: '✈️' },
+  { label: 'hello@dara.studio', href: 'mailto:hello@dara.studio', emoji: '✉️' },
+  { label: '+7 700 000 00 00', href: 'tel:+77000000000', emoji: '📞' },
+];
+
+const inputClass =
+  'w-full rounded-2xl bg-paper px-5 py-4 text-[15px] placeholder:text-muted/50 focus:outline-none focus:ring-2 focus:ring-violet';
+---
+
+<section id="contact" class="bg-violet">
+  <div class="mx-auto grid max-w-6xl gap-12 px-4 py-16 text-white sm:px-6 sm:py-24 lg:grid-cols-2 lg:items-center lg:gap-16">
+    <div data-fade>
+      <span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/15 text-xl" aria-hidden="true">👋</span>
+      <h2 class="mt-5 text-3xl font-black tracking-tight sm:text-5xl">{t.title}</h2>
+      <p class="mt-5 max-w-md text-lg leading-relaxed text-white/80">{t.sub}</p>
+
+      <p class="mt-10 text-sm font-bold text-white/70">{t.directTitle}</p>
+      <ul class="mt-4 space-y-3">
+        {
+          contacts.map((contact) => (
+            <li>
+              <a href={contact.href} class="group inline-flex items-center gap-3 text-lg font-semibold hover:text-lemon">
+                <span
+                  class="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/15 transition-colors group-hover:bg-white/25"
+                  aria-hidden="true"
+                >
+                  {contact.emoji}
+                </span>
+                {contact.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <form id="lead-form" class="rounded-[28px] bg-card p-7 text-ink shadow-lift sm:p-9" novalidate data-fade>
+      <div class="space-y-5">
+        <div>
+          <label for="lead-name" class="mb-2 block text-sm font-bold">{t.form.name}</label>
+          <input
+            id="lead-name"
+            name="name"
+            type="text"
+            required
+            maxlength="200"
+            placeholder={t.form.namePlaceholder}
+            class={inputClass}
+          />
+        </div>
+        <div>
+          <label for="lead-contact" class="mb-2 block text-sm font-bold">{t.form.contact}</label>
+          <input
+            id="lead-contact"
+            name="contact"
+            type="text"
+            required
+            maxlength="200"
+            placeholder={t.form.contactPlaceholder}
+            class={inputClass}
+          />
+        </div>
+        <div>
+          <label for="lead-message" class="mb-2 block text-sm font-bold">{t.form.message}</label>
+          <textarea
+            id="lead-message"
+            name="message"
+            rows="4"
+            maxlength="3000"
+            placeholder={t.form.messagePlaceholder}
+            class:list={[inputClass, 'resize-y']}></textarea>
+        </div>
+        {/* honeypot: скрытое поле-ловушка для ботов */}
+        <input type="text" name="company" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+
+        <button type="submit" class="btn-violet w-full !text-lg">{t.form.submit} 🚀</button>
+
+        <p class="form-note note-sending text-sm font-semibold text-muted" role="status">{t.form.sending}</p>
+
+        <div class="form-note note-success rounded-2xl bg-sage p-5" role="status">
+          <p class="font-extrabold text-mint">🎉 {t.form.success}</p>
+          <div class="mt-2 space-y-1.5">
+            {
+              t.form.log.map((line) => (
+                <p class="text-sm font-medium text-ink/70" data-log-line>
+                  {line}
+                </p>
+              ))
+            }
+          </div>
+        </div>
+
+        <p class="form-note note-error rounded-2xl bg-rose p-5 text-sm font-bold text-[#d6337f]" role="alert">
+          {t.form.error}
+        </p>
+      </div>
+    </form>
+  </div>
+</section>

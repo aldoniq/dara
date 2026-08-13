@@ -1,0 +1,48 @@
+---
+import SectionHead from './SectionHead.astro';
+import { dict, type Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = dict[lang].process;
+
+const badges = [
+  'bg-violet text-white',
+  'bg-orange text-white',
+  'bg-mint text-white',
+  'bg-lemon text-ink',
+  'bg-rose text-[#d6337f]',
+];
+---
+
+<section id="process" class="mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24">
+  <SectionHead title={t.title} sub={t.sub} accent="mint" emoji="🧭" />
+
+  <ol class="space-y-4">
+    {
+      t.steps.map((step, i) => (
+        <li data-build class="card-soft flex gap-5 p-6 sm:gap-7 sm:p-7">
+          <span
+            class:list={[
+              'flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl text-lg font-black',
+              badges[i],
+            ]}
+            aria-hidden="true"
+          >
+            {i + 1}
+          </span>
+          <div class="flex-1">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <h3 class="text-lg font-extrabold sm:text-xl">{step.title}</h3>
+              <span class="chip bg-lilac !text-violet">{step.time}</span>
+            </div>
+            <p class="mt-2 leading-relaxed text-muted">{step.desc}</p>
+          </div>
+        </li>
+      ))
+    }
+  </ol>
+</section>

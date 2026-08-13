@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Вариант 1 — Швейцарский минимализм</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter Tight', sans-serif; background: #fff; color: #111; }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+  header { border-bottom: 1px solid #111; }
+  .nav { display: flex; justify-content: space-between; align-items: center; height: 72px; }
+  .logo { font-weight: 900; font-size: 22px; letter-spacing: -0.5px; }
+  .logo span { color: #ff3b30; }
+  nav a { color: #111; text-decoration: none; margin-left: 28px; font-size: 15px; font-weight: 500; }
+  nav a:hover { color: #ff3b30; }
+  .cta { background: #111; color: #fff !important; padding: 10px 22px; }
+  .cta:hover { background: #ff3b30; }
+
+  .hero { padding: 90px 0 70px; }
+  .kicker { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #ff3b30; }
+  h1 { font-size: clamp(48px, 8vw, 110px); font-weight: 900; line-height: 0.98; letter-spacing: -3px; margin-top: 24px; }
+  h1 em { font-style: normal; color: #fff; background: #111; padding: 0 16px; }
+  .sub { font-size: 20px; line-height: 1.5; color: #555; max-width: 560px; margin-top: 32px; }
+  .actions { margin-top: 44px; display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn { display: inline-block; padding: 18px 36px; font-size: 16px; font-weight: 700; text-decoration: none; }
+  .btn-dark { background: #111; color: #fff; }
+  .btn-dark:hover { background: #ff3b30; }
+  .btn-line { border: 1px solid #111; color: #111; }
+  .btn-line:hover { border-color: #ff3b30; color: #ff3b30; }
+
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #111; }
+  .stats div { padding: 28px 0; border-right: 1px solid #eee; }
+  .stats div:last-child { border-right: none; }
+  .stats b { font-size: 44px; font-weight: 900; letter-spacing: -2px; display: block; }
+  .stats span { color: #888; font-size: 14px; }
+
+  .services { border-top: 1px solid #111; padding: 80px 0; }
+  h2 { font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 40px; }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: #111; border: 1px solid #111; }
+  .cell { background: #fff; padding: 32px 24px 60px; transition: background 0.2s; }
+  .cell:hover { background: #f6f6f6; }
+  .cell i { font-style: normal; font-size: 13px; color: #ff3b30; font-weight: 700; }
+  .cell h3 { font-size: 21px; font-weight: 700; margin-top: 14px; letter-spacing: -0.5px; }
+  .cell p { font-size: 14px; color: #777; line-height: 1.55; margin-top: 10px; }
+
+  .case { border-top: 1px solid #111; padding: 80px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  .case-img { background: #f2f2f2; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; color: #bbb; font-weight: 700; }
+  .case h3 { font-size: 36px; font-weight: 900; letter-spacing: -1.5px; }
+  .case .num { font-size: 72px; font-weight: 900; color: #ff3b30; letter-spacing: -3px; }
+  .case p { color: #555; line-height: 1.55; margin-top: 14px; }
+
+  .foot { background: #111; color: #fff; padding: 90px 0; text-align: center; }
+  .foot h2 { font-size: clamp(36px, 5vw, 64px); font-weight: 900; letter-spacing: -2px; text-transform: none; margin-bottom: 32px; }
+  @media (max-width: 900px) { .grid, .stats { grid-template-columns: 1fr 1fr; } .case { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <div class="logo">dara<span>.</span></div>
+    <nav>
+      <a href="#">Услуги</a><a href="#">Кейсы</a><a href="#">Цены</a><a href="#" class="cta">Обсудить проект</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker">Студия веб-разработки</div>
+    <h1>Сайты, которые <em>продают</em><br>и запоминаются.</h1>
+    <p class="sub">«Дара» — по-казахски «единственный в своём роде». Берём на себя всё: смыслы, дизайн, код, запуск.</p>
+    <div class="actions">
+      <a class="btn btn-dark" href="#">Обсудить проект</a>
+      <a class="btn btn-line" href="#">Смотреть кейсы</a>
+    </div>
+  </div>
+  <div class="wrap" style="margin-top:70px">
+    <div class="stats">
+      <div><b>40+</b><span>запущенных проектов</span></div>
+      <div><b>6 лет</b><span>делаем веб</span></div>
+      <div><b>92%</b><span>клиентов приходят снова</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="services">
+  <div class="wrap">
+    <h2>Что мы делаем</h2>
+    <div class="grid">
+      <div class="cell"><i>01</i><h3>Лендинги и сайты</h3><p>От смысла и текста до запуска и аналитики.</p></div>
+      <div class="cell"><i>02</i><h3>Интернет-магазины</h3><p>Каталог, оплата, Kaspi, 1С и CRM — магазин, готовый продавать.</p></div>
+      <div class="cell"><i>03</i><h3>Веб-приложения</h3><p>Личные кабинеты и автоматизация процессов.</p></div>
+      <div class="cell"><i>04</i><h3>Поддержка</h3><p>Обновления, аналитика, A/B-тесты и скорость.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap case">
+    <div>
+      <div class="num">+140%</div>
+      <h3>Aruana Coffee</h3>
+      <p>Интернет-магазин свежеобжаренного кофе: каталог, подписка на зёрна, оплата через Kaspi. Плюс 140% онлайн-заказов за первый квартал.</p>
+    </div>
+    <div class="case-img">скриншот проекта</div>
+  </div>
+</section>
+
+<section class="foot">
+  <div class="wrap">
+    <h2>Обсудим ваш проект?</h2>
+    <a class="btn" style="background:#ff3b30;color:#fff" href="#">Оставить заявку</a>
+  </div>
+</section>
+</body>
+</html>

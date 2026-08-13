@@ -1,0 +1,29 @@
+---
+import { dict, type Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const items = dict[lang].marquee;
+---
+
+<div class="bg-lilac py-3.5" aria-hidden="true">
+  <div class="flex overflow-hidden">
+    <div class="animate-marquee flex shrink-0 items-center whitespace-nowrap">
+      {
+        [0, 1].map(() => (
+          <span class="flex items-center">
+            {items.map((item) => (
+              <span class="flex items-center text-sm font-bold text-violet">
+                <span class="px-5">{item}</span>
+                <span class="text-orange">✿</span>
+              </span>
+            ))}
+          </span>
+        ))
+      }
+    </div>
+  </div>
+</div>

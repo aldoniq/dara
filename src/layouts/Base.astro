@@ -1,0 +1,35 @@
+---
+import Analytics from '@vercel/analytics/astro';
+import '../styles/global.css';
+import { dict, langs, langPath, type Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = dict[lang];
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#f7f4ef" />
+    <title>{t.meta.title}</title>
+    <meta name="description" content={t.meta.description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    {langs.map((l) => <link rel="alternate" hreflang={l} href={langPath(l)} />)}
+    <link rel="alternate" hreflang="x-default" href="/" />
+    <meta property="og:title" content={t.meta.title} />
+    <meta property="og:description" content={t.meta.description} />
+    <meta property="og:type" content="website" />
+  </head>
+  <body>
+    <slot />
+    <script src="../scripts/main.ts"></script>
+    <Analytics />
+  </body>
+</html>

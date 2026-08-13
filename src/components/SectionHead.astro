@@ -1,0 +1,28 @@
+---
+interface Props {
+  title: string;
+  sub?: string;
+  accent?: 'violet' | 'orange' | 'mint' | 'rose';
+  emoji?: string;
+}
+
+const { title, sub, accent = 'violet', emoji = '✿' } = Astro.props;
+
+const accentClass = {
+  violet: 'bg-lilac text-violet',
+  orange: 'bg-peach text-orange',
+  mint: 'bg-sage text-mint',
+  rose: 'bg-rose text-[#d6337f]',
+}[accent];
+---
+
+<div class="mb-10 max-w-2xl sm:mb-14" data-fade>
+  <span
+    class:list={['inline-flex h-12 w-12 items-center justify-center rounded-2xl text-xl', accentClass]}
+    aria-hidden="true"
+  >
+    {emoji}
+  </span>
+  <h2 class="mt-5 text-3xl font-black tracking-tight sm:text-5xl">{title}</h2>
+  {sub && <p class="mt-4 text-lg leading-relaxed text-muted">{sub}</p>}
+</div>

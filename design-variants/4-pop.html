@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Вариант 4 — Поп / цветные блоки</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Rubik', sans-serif; background: #f7f4ef; color: #1c1b33; }
+  .wrap { max-width: 1150px; margin: 0 auto; padding: 0 32px; }
+  header { background: #f7f4ef; position: sticky; top: 0; z-index: 10; }
+  .nav { display: flex; justify-content: space-between; align-items: center; height: 76px; }
+  .logo { font-weight: 900; font-size: 24px; color: #5b46f6; }
+  nav a { color: #1c1b33; text-decoration: none; margin-left: 26px; font-size: 15px; font-weight: 500; }
+  nav a:hover { color: #5b46f6; }
+  .pill { background: #5b46f6; color: #fff !important; padding: 12px 24px; border-radius: 100px; font-weight: 700; }
+  .pill:hover { background: #4735d1; }
+
+  .hero { padding: 80px 0 60px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 50px; align-items: center; }
+  h1 { font-size: clamp(42px, 6vw, 76px); font-weight: 900; line-height: 1.04; letter-spacing: -1.5px; }
+  h1 .a { color: #5b46f6; }
+  h1 .b { color: #ff7a00; }
+  .sub { font-size: 19px; line-height: 1.6; color: #5e5c78; max-width: 500px; margin-top: 26px; }
+  .actions { margin-top: 38px; display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn { display: inline-block; padding: 17px 34px; border-radius: 100px; font-size: 16px; font-weight: 700; text-decoration: none; transition: transform 0.15s; }
+  .btn:hover { transform: scale(1.04); }
+  .btn-vio { background: #5b46f6; color: #fff; }
+  .btn-org { background: #ffe3c7; color: #c05600; }
+
+  .mosaic { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 16px; aspect-ratio: 1; }
+  .tile { border-radius: 28px; display: flex; align-items: flex-end; padding: 22px; font-weight: 700; font-size: 15px; color: #fff; }
+  .t1 { background: #5b46f6; grid-row: span 2; }
+  .t2 { background: #ff7a00; }
+  .t3 { background: #16c47f; }
+
+  .services { padding: 60px 0 80px; }
+  h2 { font-size: 38px; font-weight: 900; letter-spacing: -1px; margin-bottom: 36px; }
+  .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .card { border-radius: 26px; padding: 28px 24px; min-height: 210px; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s; }
+  .card:hover { transform: translateY(-6px) rotate(-1deg); }
+  .c1 { background: #e6e1ff; } .c2 { background: #ffe3c7; } .c3 { background: #d3f5e7; } .c4 { background: #ffd9ec; }
+  .card h3 { font-size: 19px; font-weight: 700; }
+  .card p { font-size: 14px; color: #5e5c78; line-height: 1.5; margin-top: 10px; }
+  .card .em { font-size: 26px; }
+
+  .band { background: #5b46f6; color: #fff; padding: 70px 0; }
+  .band .wrap { display: flex; gap: 40px; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+  .band b { font-size: 52px; font-weight: 900; display: block; }
+  .band span { opacity: 0.75; font-size: 15px; }
+  .band .cta2 { background: #ffde33; color: #1c1b33; padding: 18px 38px; border-radius: 100px; font-weight: 900; text-decoration: none; font-size: 17px; }
+
+  .foot { padding: 90px 0; text-align: center; }
+  .foot h2 { font-size: clamp(34px, 5vw, 58px); margin-bottom: 30px; }
+  @media (max-width: 900px) { .hero { grid-template-columns: 1fr; } .cards { grid-template-columns: 1fr 1fr; } .mosaic { max-width: 420px; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <div class="logo">dara✿</div>
+    <nav><a href="#">Услуги</a><a href="#">Кейсы</a><a href="#">Цены</a><a class="pill" href="#">Обсудить проект</a></nav>
+  </div>
+</header>
+
+<section class="wrap hero">
+  <div>
+    <h1>Сайты, которые <span class="a">продают</span> и <span class="b">запоминаются</span></h1>
+    <p class="sub">«Дара» — по-казахски «единственный в своём роде». Смыслы, дизайн, код и запуск — всё берём на себя.</p>
+    <div class="actions">
+      <a class="btn btn-vio" href="#">Обсудить проект</a>
+      <a class="btn btn-org" href="#">Смотреть кейсы</a>
+    </div>
+  </div>
+  <div class="mosaic">
+    <div class="tile t1">40+ проектов</div>
+    <div class="tile t2">6 лет опыта</div>
+    <div class="tile t3">92% возвращаются</div>
+  </div>
+</section>
+
+<section class="wrap services">
+  <h2>Что мы делаем</h2>
+  <div class="cards">
+    <div class="card c1"><span class="em">🚀</span><div><h3>Лендинги и сайты</h3><p>От смысла и текста до запуска.</p></div></div>
+    <div class="card c2"><span class="em">🛍</span><div><h3>Интернет-магазины</h3><p>Kaspi, 1С, CRM — готово продавать.</p></div></div>
+    <div class="card c3"><span class="em">⚙️</span><div><h3>Веб-приложения</h3><p>Кабинеты и автоматизация.</p></div></div>
+    <div class="card c4"><span class="em">📈</span><div><h3>Поддержка</h3><p>Аналитика, тесты, скорость.</p></div></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div><b>+140%</b><span>заказов у Aruana Coffee после запуска магазина</span></div>
+    <a class="cta2" href="#">Хочу так же →</a>
+  </div>
+</section>
+
+<section class="foot">
+  <div class="wrap">
+    <h2>Обсудим ваш проект?</h2>
+    <a class="btn btn-vio" href="#">Оставить заявку</a>
+  </div>
+</section>
+</body>
+</html>

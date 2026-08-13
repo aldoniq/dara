@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Вариант 5 — Монохром / оверсайз</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;600;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter Tight', sans-serif; background: #0a0a0a; color: #f5f5f0; }
+  .wrap { max-width: 1250px; margin: 0 auto; padding: 0 32px; }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+  header { border-bottom: 1px solid #262626; }
+  .nav { display: flex; justify-content: space-between; align-items: center; height: 70px; }
+  .logo { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 18px; }
+  .logo span { color: #d4ff3f; }
+  nav a { color: #8a8a85; text-decoration: none; margin-left: 28px; font-size: 14px; font-family: 'JetBrains Mono', monospace; }
+  nav a:hover { color: #d4ff3f; }
+
+  .hero { padding: 100px 0 80px; }
+  .kicker { font-family: 'JetBrains Mono', monospace; color: #8a8a85; font-size: 13px; }
+  .kicker b { color: #d4ff3f; font-weight: 400; }
+  h1 { font-size: clamp(56px, 11vw, 160px); font-weight: 900; line-height: 0.92; letter-spacing: -0.04em; text-transform: uppercase; margin-top: 30px; }
+  h1 .out { color: transparent; -webkit-text-stroke: 2px #f5f5f0; }
+  h1 .acc { color: #d4ff3f; }
+  .heroRow { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-top: 44px; flex-wrap: wrap; }
+  .sub { font-size: 18px; line-height: 1.6; color: #8a8a85; max-width: 460px; }
+  .btn { display: inline-block; padding: 20px 44px; font-size: 15px; font-weight: 700; text-decoration: none; text-transform: uppercase;
+         letter-spacing: 1px; background: #d4ff3f; color: #0a0a0a; transition: all 0.15s; }
+  .btn:hover { background: #f5f5f0; }
+
+  .ticker { border-top: 1px solid #262626; border-bottom: 1px solid #262626; overflow: hidden; padding: 16px 0; white-space: nowrap; }
+  .ticker span { font-family: 'JetBrains Mono', monospace; color: #8a8a85; font-size: 14px; margin-right: 40px; }
+  .ticker b { color: #d4ff3f; font-weight: 400; }
+
+  .services { padding: 0; }
+  .row { display: flex; justify-content: space-between; align-items: center; padding: 42px 0; border-bottom: 1px solid #262626; text-decoration: none; color: #f5f5f0; transition: padding 0.2s; }
+  .row:hover { padding-left: 24px; color: #d4ff3f; }
+  .row h3 { font-size: clamp(26px, 4vw, 48px); font-weight: 900; text-transform: uppercase; letter-spacing: -1px; }
+  .row .meta { font-family: 'JetBrains Mono', monospace; color: #8a8a85; font-size: 13px; text-align: right; }
+  .row .arrow { font-size: 30px; margin-left: 30px; }
+
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .stats div { padding: 50px 0; border-right: 1px solid #262626; text-align: center; }
+  .stats div:last-child { border-right: none; }
+  .stats b { font-size: 64px; font-weight: 900; letter-spacing: -3px; display: block; }
+  .stats b i { color: #d4ff3f; font-style: normal; }
+  .stats span { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #8a8a85; }
+
+  .foot { border-top: 1px solid #262626; padding: 100px 0; }
+  .foot h2 { font-size: clamp(40px, 8vw, 110px); font-weight: 900; text-transform: uppercase; letter-spacing: -0.03em; line-height: 0.95; }
+  .foot h2 span { color: transparent; -webkit-text-stroke: 1.5px #f5f5f0; }
+  .foot .actions { margin-top: 44px; }
+  @media (max-width: 700px) { .stats b { font-size: 40px; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <div class="logo">dara<span>_</span></div>
+    <nav><a href="#">услуги</a><a href="#">кейсы</a><a href="#">цены</a><a href="#">контакт</a></nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="kicker"><b>●</b> студия веб-разработки — алматы / астана / remote</p>
+    <h1>Сайты,<br>которые <span class="acc">продают</span><br><span class="out">и запоминаются</span></h1>
+    <div class="heroRow">
+      <p class="sub">«Дара» — по-казахски «единственный в своём роде». Смыслы, дизайн, код, запуск — под ключ.</p>
+      <a class="btn" href="#">Обсудить проект</a>
+    </div>
+  </div>
+</section>
+
+<div class="ticker">
+  <span><b>✓</b> лендинги</span><span><b>✓</b> интернет-магазины</span><span><b>✓</b> веб-приложения</span><span><b>✓</b> ui/ux</span><span><b>✓</b> seo и скорость</span><span><b>✓</b> поддержка</span><span><b>✓</b> лендинги</span><span><b>✓</b> интернет-магазины</span>
+</div>
+
+<section class="wrap services">
+  <a class="row" href="#"><h3>Лендинги и сайты</h3><div class="meta">от 400 000 ₸<br>1–2 недели</div><span class="arrow">→</span></a>
+  <a class="row" href="#"><h3>Интернет-магазины</h3><div class="meta">от 900 000 ₸<br>3–6 недель</div><span class="arrow">→</span></a>
+  <a class="row" href="#"><h3>Веб-приложения</h3><div class="meta">по оценке<br>от 6 недель</div><span class="arrow">→</span></a>
+  <a class="row" href="#"><h3>Поддержка</h3><div class="meta">по подписке<br>SLA</div><span class="arrow">→</span></a>
+</section>
+
+<section class="wrap stats">
+  <div><b>40<i>+</i></b><span>запущенных проектов</span></div>
+  <div><b>6</b><span>лет делаем веб</span></div>
+  <div><b>92<i>%</i></b><span>клиентов возвращаются</span></div>
+</section>
+
+<section class="foot">
+  <div class="wrap">
+    <h2>Обсудим<br><span>ваш проект?</span></h2>
+    <div class="actions"><a class="btn" href="#">Оставить заявку</a></div>
+  </div>
+</section>
+</body>
+</html>

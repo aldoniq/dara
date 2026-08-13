@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dara — выбор дизайна</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, 'Segoe UI', sans-serif; background: #16161d; color: #fff; padding: 40px; }
+  h1 { font-size: 28px; margin-bottom: 6px; }
+  p.hint { color: #9a9aa5; margin-bottom: 32px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 28px; }
+  a.card { display: block; text-decoration: none; color: #fff; background: #1f1f28; border-radius: 14px; overflow: hidden;
+           border: 1px solid #2c2c38; transition: transform 0.15s, border-color 0.15s; }
+  a.card:hover { transform: translateY(-4px); border-color: #6c63ff; }
+  .preview { position: relative; height: 260px; overflow: hidden; background: #000; }
+  .preview iframe { width: 1400px; height: 950px; border: 0; transform: scale(0.2857); transform-origin: top left; pointer-events: none; }
+  .label { padding: 16px 18px; }
+  .label b { font-size: 16px; }
+  .label span { display: block; color: #9a9aa5; font-size: 13px; margin-top: 4px; }
+</style>
+</head>
+<body>
+  <h1>Выбор дизайна для Dara</h1>
+  <p class="hint">Кликни на карточку — откроется полная версия варианта.</p>
+  <div class="grid">
+    <a class="card" href="1-swiss.html">
+      <div class="preview"><iframe src="1-swiss.html" tabindex="-1"></iframe></div>
+      <div class="label"><b>1 — Швейцарский минимализм</b><span>белый фон, чёрная типографика, красный акцент, строгая сетка</span></div>
+    </a>
+    <a class="card" href="2-aurora.html">
+      <div class="preview"><iframe src="2-aurora.html" tabindex="-1"></iframe></div>
+      <div class="label"><b>2 — Aurora</b><span>тёмный фон, градиентные свечения, стеклянные карточки</span></div>
+    </a>
+    <a class="card" href="3-luxury.html">
+      <div class="preview"><iframe src="3-luxury.html" tabindex="-1"></iframe></div>
+      <div class="label"><b>3 — Премиум</b><span>тёмно-зелёный, золото, serif-заголовки, дорогой минимализм</span></div>
+    </a>
+    <a class="card" href="4-pop.html">
+      <div class="preview"><iframe src="4-pop.html" tabindex="-1"></iframe></div>
+      <div class="label"><b>4 — Поп</b><span>светлый, цветные скруглённые блоки, дружелюбный и энергичный</span></div>
+    </a>
+    <a class="card" href="5-mono.html">
+      <div class="preview"><iframe src="5-mono.html" tabindex="-1"></iframe></div>
+      <div class="label"><b>5 — Монохром</b><span>чёрно-белый оверсайз, огромная типографика, лаймовый акцент</span></div>
+    </a>
+  </div>
+</body>
+</html>

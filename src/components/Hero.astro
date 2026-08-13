@@ -1,0 +1,114 @@
+---
+import { dict, type Lang } from '../i18n';
+import { splitWords } from '../lib/split';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = dict[lang].hero;
+
+const pre = splitWords(t.titlePre);
+const accent = splitWords(t.titleAccent);
+const post = splitWords(t.titlePost);
+
+// Плитки мозаики: цвет + статистика
+const tiles = [
+  { class: 'bg-violet text-white row-span-2', deco: '✦' },
+  { class: 'bg-orange text-white', deco: '➜' },
+  { class: 'bg-mint text-white', deco: '♥' },
+];
+---
+
+<section class="relative overflow-hidden">
+  <span class="animate-floaty pointer-events-none absolute top-24 right-[6%] hidden text-5xl text-orange/70 select-none lg:block" aria-hidden="true">✿</span>
+  <span class="animate-floaty pointer-events-none absolute bottom-16 left-[4%] hidden text-4xl text-violet/40 select-none lg:block" style="animation-delay:-2.5s" aria-hidden="true">✦</span>
+
+  <div class="mx-auto grid max-w-6xl items-center gap-12 px-4 pt-16 pb-16 sm:px-6 sm:pt-20 sm:pb-24 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
+    <div>
+      <p class="inline-flex items-center gap-2 rounded-full bg-lilac px-4 py-2 text-sm font-semibold text-violet">
+        ✿ {t.badge}
+      </p>
+
+      <h1
+        data-split-rise
+        class="mt-7 max-w-xl text-4xl leading-[1.05] font-black tracking-tight sm:text-6xl lg:text-[4.3rem]"
+      >
+        {
+          pre.map((word) => (
+            <>
+              <span class="split-word">
+                {word.map((ch) => (
+                  <span class="split-char" data-char>
+                    {ch}
+                  </span>
+                ))}
+              </span>{' '}
+            </>
+          ))
+        }
+        {
+          accent.map((word) => (
+            <>
+              <span class="split-word text-violet">
+                {word.map((ch) => (
+                  <span class="split-char" data-char>
+                    {ch}
+                  </span>
+                ))}
+              </span>{' '}
+            </>
+          ))
+        }
+        {
+          post.map((word) => (
+            <>
+              <span class="split-word">
+                {word.map((ch) => (
+                  <span class="split-char" data-char>
+                    {ch}
+                  </span>
+                ))}
+              </span>{' '}
+            </>
+          ))
+        }<span class="split-word text-orange"><span class="split-char" data-char>✿</span></span>
+      </h1>
+
+      <p class="mt-7 max-w-lg text-lg font-medium text-violet" data-fade>{t.meaning}</p>
+      <p class="mt-3 max-w-lg text-lg leading-relaxed text-muted" data-fade>{t.sub}</p>
+
+      <div class="mt-10 flex flex-wrap items-center gap-4" data-fade>
+        <a href="#contact" class="btn-violet">{t.ctaPrimary}</a>
+        <a href="#cases" class="btn-soft">{t.ctaSecondary}</a>
+      </div>
+    </div>
+
+    {/* Мозаика со статистикой */}
+    <div class="mx-auto grid w-full max-w-md grid-cols-2 grid-rows-2 gap-4 lg:max-w-none" aria-label="Статистика студии">
+      {
+        t.stats.map((stat, i) => (
+          <div
+            data-tile
+            class:list={[
+              'flex flex-col justify-between rounded-[28px] p-6 shadow-soft',
+              tiles[i].class,
+              i === 0 ? 'min-h-[280px] sm:min-h-[320px]' : 'min-h-[130px] sm:min-h-[150px]',
+            ]}
+          >
+            <span class="text-2xl opacity-80" aria-hidden="true">
+              {tiles[i].deco}
+            </span>
+            <div>
+              <p class:list={['font-black', i === 0 ? 'text-5xl sm:text-6xl' : 'text-3xl sm:text-4xl']}>
+                <span data-count={stat.n}>{stat.n}</span>{stat.suffix}
+              </p>
+              <p class="mt-1.5 text-sm font-medium opacity-85">{stat.label}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

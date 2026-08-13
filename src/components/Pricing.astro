@@ -1,0 +1,66 @@
+---
+import SectionHead from './SectionHead.astro';
+import { dict, type Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = dict[lang].pricing;
+---
+
+<section id="pricing" class="bg-card">
+  <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
+    <SectionHead title={t.title} sub={t.sub} accent="rose" emoji="💸" />
+
+    <div class="grid gap-6 lg:grid-cols-3">
+      {
+        t.items.map((item, i) => {
+          const featured = i === 1;
+          return (
+            <article
+              data-build
+              class:list={[
+                'relative flex flex-col rounded-[28px] p-8',
+                featured ? 'bg-violet text-white shadow-lift lg:-translate-y-3' : 'bg-paper',
+              ]}
+            >
+              {featured && (
+                <span class="absolute -top-3.5 right-8 rounded-full bg-lemon px-4 py-1.5 text-xs font-extrabold text-ink">
+                  {t.popular}
+                </span>
+              )}
+              <h3 class="text-xl font-extrabold">{item.name}</h3>
+              <p class:list={['mt-4 text-3xl font-black sm:text-4xl', !featured && 'text-violet']}>
+                {item.price}
+              </p>
+              <p class:list={['mt-1 text-sm font-medium', featured ? 'text-white/70' : 'text-muted']}>
+                {item.time}
+              </p>
+              <ul class="mt-7 flex-1 space-y-3">
+                {item.features.map((feature) => (
+                  <li class="flex items-start gap-3 text-[15px] leading-snug">
+                    <span
+                      class:list={[
+                        'mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[11px] font-black',
+                        featured ? 'bg-lemon text-ink' : 'bg-sage text-mint',
+                      ]}
+                      aria-hidden="true"
+                    >
+                      ✓
+                    </span>
+                    <span class:list={featured ? 'text-white/90' : 'text-muted'}>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <a href="#contact" class:list={['mt-8', featured ? 'btn-lemon' : 'btn-violet']}>
+                {t.cta}
+              </a>
+            </article>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>
