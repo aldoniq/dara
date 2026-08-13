@@ -15,20 +15,17 @@ const post = splitWords(t.titlePost);
 
 // Плитки мозаики: цвет + статистика
 const tiles = [
-  { class: 'bg-violet text-white row-span-2', deco: '✦' },
-  { class: 'bg-orange text-white', deco: '➜' },
-  { class: 'bg-mint text-white', deco: '♥' },
+  { class: 'bg-violet text-white row-span-2' },
+  { class: 'bg-orange text-white' },
+  { class: 'bg-mint text-white' },
 ];
 ---
 
 <section class="relative overflow-hidden">
-  <span class="animate-floaty pointer-events-none absolute top-24 right-[6%] hidden text-5xl text-orange/70 select-none lg:block" aria-hidden="true">✿</span>
-  <span class="animate-floaty pointer-events-none absolute bottom-16 left-[4%] hidden text-4xl text-violet/40 select-none lg:block" style="animation-delay:-2.5s" aria-hidden="true">✦</span>
-
   <div class="mx-auto grid max-w-6xl items-center gap-12 px-4 pt-16 pb-16 sm:px-6 sm:pt-20 sm:pb-24 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
     <div>
       <p class="inline-flex items-center gap-2 rounded-full bg-lilac px-4 py-2 text-sm font-semibold text-violet">
-        ✿ {t.badge}
+        {t.badge}
       </p>
 
       <h1
@@ -73,7 +70,7 @@ const tiles = [
               </span>{' '}
             </>
           ))
-        }<span class="split-word text-orange"><span class="split-char" data-char>✿</span></span>
+        }<span class="split-word text-orange"><span class="split-char" data-char>.</span></span>
       </h1>
 
       <p class="mt-7 max-w-lg text-lg font-medium text-violet" data-fade>{t.meaning}</p>
@@ -92,14 +89,11 @@ const tiles = [
           <div
             data-tile
             class:list={[
-              'flex flex-col justify-between rounded-[28px] p-6 shadow-soft',
+              'flex flex-col justify-end rounded-[28px] p-6 shadow-soft',
               tiles[i].class,
               i === 0 ? 'min-h-[280px] sm:min-h-[320px]' : 'min-h-[130px] sm:min-h-[150px]',
             ]}
           >
-            <span class="text-2xl opacity-80" aria-hidden="true">
-              {tiles[i].deco}
-            </span>
             <div>
               <p class:list={['font-black', i === 0 ? 'text-5xl sm:text-6xl' : 'text-3xl sm:text-4xl']}>
                 <span data-count={stat.n}>{stat.n}</span>{stat.suffix}

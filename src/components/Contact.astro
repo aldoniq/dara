@@ -10,9 +10,9 @@ const t = dict[lang].contact;
 
 // Плейсхолдеры — заменить на реальные контакты студии
 const contacts = [
-  { label: '@dara_studio', href: 'https://t.me/dara_studio', emoji: '✈️' },
-  { label: 'hello@dara.studio', href: 'mailto:hello@dara.studio', emoji: '✉️' },
-  { label: '+7 700 000 00 00', href: 'tel:+77000000000', emoji: '📞' },
+  { label: 'Telegram', value: '@dara_studio', href: 'https://t.me/dara_studio' },
+  { label: 'Email', value: 'hello@dara.studio', href: 'mailto:hello@dara.studio' },
+  { label: 'Телефон', value: '+7 700 000 00 00', href: 'tel:+77000000000' },
 ];
 
 const inputClass =
@@ -22,8 +22,7 @@ const inputClass =
 <section id="contact" class="bg-violet">
   <div class="mx-auto grid max-w-6xl gap-12 px-4 py-16 text-white sm:px-6 sm:py-24 lg:grid-cols-2 lg:items-center lg:gap-16">
     <div data-fade>
-      <span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/15 text-xl" aria-hidden="true">👋</span>
-      <h2 class="mt-5 text-3xl font-black tracking-tight sm:text-5xl">{t.title}</h2>
+      <h2 class="text-3xl font-black tracking-tight sm:text-5xl">{t.title}</h2>
       <p class="mt-5 max-w-md text-lg leading-relaxed text-white/80">{t.sub}</p>
 
       <p class="mt-10 text-sm font-bold text-white/70">{t.directTitle}</p>
@@ -31,14 +30,9 @@ const inputClass =
         {
           contacts.map((contact) => (
             <li>
-              <a href={contact.href} class="group inline-flex items-center gap-3 text-lg font-semibold hover:text-lemon">
-                <span
-                  class="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/15 transition-colors group-hover:bg-white/25"
-                  aria-hidden="true"
-                >
-                  {contact.emoji}
-                </span>
-                {contact.label}
+              <a href={contact.href} class="group inline-flex items-baseline gap-3 text-lg font-semibold hover:text-lemon">
+                <span class="w-20 shrink-0 text-sm font-medium text-white/60">{contact.label}</span>
+                <span class="underline-offset-4 group-hover:underline">{contact.value}</span>
               </a>
             </li>
           ))
@@ -85,21 +79,22 @@ const inputClass =
         {/* honeypot: скрытое поле-ловушка для ботов */}
         <input type="text" name="company" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
 
-        <button type="submit" class="btn-violet w-full !text-lg">{t.form.submit} 🚀</button>
+        <button type="submit" class="btn-violet w-full !text-lg">{t.form.submit}</button>
 
         <p class="form-note note-sending text-sm font-semibold text-muted" role="status">{t.form.sending}</p>
 
         <div class="form-note note-success rounded-2xl bg-sage p-5" role="status">
-          <p class="font-extrabold text-mint">🎉 {t.form.success}</p>
-          <div class="mt-2 space-y-1.5">
+          <p class="font-extrabold text-mint">{t.form.success}</p>
+          <ul class="mt-2 space-y-1.5">
             {
               t.form.log.map((line) => (
-                <p class="text-sm font-medium text-ink/70" data-log-line>
+                <li class="flex items-start gap-2 text-sm font-medium text-ink/70" data-log-line>
+                  <span class="mt-0.5 text-mint" aria-hidden="true">✓</span>
                   {line}
-                </p>
+                </li>
               ))
             }
-          </div>
+          </ul>
         </div>
 
         <p class="form-note note-error rounded-2xl bg-rose p-5 text-sm font-bold text-[#d6337f]" role="alert">

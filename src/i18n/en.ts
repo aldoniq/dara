@@ -2,7 +2,7 @@ import type { Dict } from './ru';
 
 const en: Dict = {
   meta: {
-    title: 'Dara — web studio: websites, e-commerce, web apps',
+    title: 'Dara | web studio: websites, e-commerce, web apps',
     description:
       'We build websites, online stores and web apps end to end: strategy, design, code, launch and support.',
   },
@@ -20,8 +20,8 @@ const en: Dict = {
     titlePre: 'Websites that',
     titleAccent: 'sell',
     titlePost: 'and get remembered',
-    meaning: '“Dara” means “one of a kind” in Kazakh. That is how we build every project.',
-    sub: 'We take care of everything: strategy, design, code, launch. You run the business — we make the website work for it.',
+    meaning: 'In Kazakh, "dara" means one of a kind. That is how we build every project.',
+    sub: 'We take care of everything: strategy, design, code, launch. You run the business and we make the website work for it.',
     ctaPrimary: 'Start a project',
     ctaSecondary: 'See our work',
     stats: [
@@ -35,7 +35,7 @@ const en: Dict = {
     'online stores',
     'web apps',
     'UI/UX design',
-    'SEO & speed',
+    'SEO and speed',
     'support',
   ],
   services: {
@@ -43,13 +43,13 @@ const en: Dict = {
     sub: 'Four services, one outcome: a website that brings in leads instead of just existing online.',
     items: [
       {
-        title: 'Websites & landing pages',
+        title: 'Websites and landing pages',
         desc: 'High-converting landing pages and corporate websites: from messaging and copy to launch and analytics.',
         tags: ['design', 'copywriting', 'SEO basics'],
       },
       {
         title: 'Online stores',
-        desc: 'Catalog, cart, payments and delivery. Kaspi, 1C and CRM integrations — a store that is ready to sell.',
+        desc: 'Catalog, cart, payments and delivery. Kaspi, 1C and CRM integrations. A store that is ready to sell.',
         tags: ['e-commerce', 'Kaspi Pay', 'integrations'],
       },
       {
@@ -58,7 +58,7 @@ const en: Dict = {
         tags: ['portals', 'API', 'automation'],
       },
       {
-        title: 'Support & growth',
+        title: 'Support and growth',
         desc: 'Updates, analytics, A/B tests and performance. Your website keeps living and growing instead of aging.',
         tags: ['SLA', 'analytics', 'A/B testing'],
       },
@@ -87,7 +87,7 @@ const en: Dict = {
       {
         name: 'Qurylys Group',
         type: 'corporate website',
-        metric: '×2.3',
+        metric: 'x2.3',
         metricLabel: 'leads from ads',
         desc: 'Real estate developer website: project catalog, floor plans, mortgage calculator, CRM export.',
         tags: ['real estate', 'calculator', 'CRM'],
@@ -99,27 +99,27 @@ const en: Dict = {
     sub: 'A transparent process with no surprises: you always know what is happening and what comes next.',
     steps: [
       {
-        title: 'Brief & estimate',
+        title: 'Brief and estimate',
         desc: 'A 30-minute call: we agree on goals, timeline and budget. Free, no strings attached.',
-        time: '1–2 days',
+        time: '1-2 days',
       },
       {
-        title: 'Prototype & design',
-        desc: 'We shape the structure and design concept. We iterate until you say “that’s it”.',
+        title: 'Prototype and design',
+        desc: 'We shape the structure and design concept. We iterate until you say "that is it".',
         time: '~1 week',
       },
       {
         title: 'Development',
-        desc: 'We write the code and share progress on a live demo link. No “you’ll see it at the end”.',
-        time: '1–3 weeks',
+        desc: 'We write the code and share progress on a live demo link. No "you will see it at the end".',
+        time: '1-3 weeks',
       },
       {
-        title: 'Content & QA',
-        desc: 'We fill in content, proofread and test on every screen and browser. 90+ Lighthouse scores.',
-        time: '3–5 days',
+        title: 'Content and QA',
+        desc: 'We fill in content, proofread and test on every screen and browser. Lighthouse scores stay above 90.',
+        time: '3-5 days',
       },
       {
-        title: 'Launch & support',
+        title: 'Launch and support',
         desc: 'We ship, hook up analytics and train your team. We stay around after the launch.',
         time: '1 day',
       },
@@ -127,13 +127,13 @@ const en: Dict = {
   },
   pricing: {
     title: 'Pricing',
-    sub: 'We prepare an exact estimate after the brief — free of charge. These are honest ballparks so you know the range.',
+    sub: 'We prepare an exact estimate after the brief, free of charge. These are honest ballparks so you know the range.',
     popular: 'most popular',
     items: [
       {
         name: 'Landing page',
         price: 'from $900',
-        time: '1–2 weeks',
+        time: '1-2 weeks',
         features: [
           'design tailored to your brand',
           'copy and structure',
@@ -145,7 +145,7 @@ const en: Dict = {
       {
         name: 'Website or store',
         price: 'from $2,000',
-        time: '3–6 weeks',
+        time: '3-6 weeks',
         features: [
           'catalog and payments',
           'integrations: Kaspi, 1C, CRM',
@@ -198,15 +198,15 @@ const en: Dict = {
       },
       {
         q: 'How long does it take?',
-        a: 'A landing page takes 1–2 weeks, a website or store 3–6 weeks, an app 6+ weeks. Deadlines are fixed in the contract and progress is visible on a demo link every week.',
+        a: 'A landing page takes 1-2 weeks, a website or store 3-6 weeks, an app 6+ weeks. Deadlines are fixed in the contract and progress is visible on a demo link every week.',
       },
       {
         q: 'What do you need from us?',
-        a: 'The minimum: 2–3 calls, materials about your company and feedback on designs. Copy, structure and design are on us.',
+        a: 'The minimum: 2-3 calls, materials about your company and feedback on designs. Copy, structure and design are on us.',
       },
       {
         q: 'Who writes the copy and designs the site?',
-        a: 'We do. We work end to end: copywriting, design, development and launch — all in-house, no subcontractors.',
+        a: 'We do. We work end to end: copywriting, design, development and launch, all in-house, no subcontractors.',
       },
       {
         q: 'What happens after launch?',
@@ -215,8 +215,8 @@ const en: Dict = {
     ],
   },
   contact: {
-    title: 'Let’s talk about your project',
-    sub: 'Tell us a few words about the task — we will get back with questions and a rough estimate within one business day.',
+    title: 'Let us talk about your project',
+    sub: 'Tell us a few words about the task and we will get back with questions and a rough estimate within one business day.',
     directTitle: 'Or reach us directly:',
     form: {
       name: 'Your name',
@@ -224,21 +224,21 @@ const en: Dict = {
       contact: 'Phone or Telegram',
       contactPlaceholder: '+7 700 000 00 00 or @username',
       message: 'A few words about the task',
-      messagePlaceholder: 'We need an online store for a cosmetics brand, launching by December…',
-      submit: 'Launch the project',
-      sending: 'Deploying your request…',
-      success: 'Request is in!',
-      error: 'Something went wrong. Message us directly — contacts are on the left.',
+      messagePlaceholder: 'We need an online store for a cosmetics brand, launching by December',
+      submit: 'Send request',
+      sending: 'Sending...',
+      success: 'Sent!',
+      error: 'Something went wrong. Message us directly instead.',
       log: [
-        '✓ request received',
-        '✓ the team has been notified',
-        '▸ we will reply within one business day',
+        'request received',
+        'the team has been notified',
+        'we will reply within one business day',
       ],
     },
   },
   footer: {
     tagline: 'One-of-a-kind websites.',
-    status: 'system: online · taking on projects',
+    status: 'Open for new projects',
     rights: '© 2026 Dara Studio',
     langLabel: 'Language',
   },
